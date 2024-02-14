@@ -1,5 +1,6 @@
 import data from "../../data.json";
 import "./Card.css";
+
 const title = data.map((x) => {
   return x.title;
 });

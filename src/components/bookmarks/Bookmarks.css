@@ -1,7 +1,7 @@
-#series {
+#bookmarksPage {
     background: var(--Dark-Blue, #10141E);
 }
-#series h1 {
+#bookmarksPage h1 {
     padding: 0 16px;
     padding-top: 24px;
     padding-bottom: 24px;

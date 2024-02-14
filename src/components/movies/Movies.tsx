@@ -1,15 +1,15 @@
-import "./Bookmarks.css";
+import "./Movies.css";
 import data from "../../data.json";
 import Card from "../card/Card";
 
-function Bookmarks() {
+function Movies() {
   return (
     <>
-      <div id="bookmarksPage">
-        <h1>Bookmarked Movies</h1>
+      <div id="movies">
+        <h1>Movies</h1>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }}>
           {data.map((x) => {
-            if (x.isBookmarked) {
+            if (x.category == "Movie") {
               return (
                 <Card
                   year={x.year}
@@ -27,4 +27,4 @@ function Bookmarks() {
   );
 }
 
-export default Bookmarks;
+export default Movies;

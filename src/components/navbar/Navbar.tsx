@@ -6,7 +6,6 @@ function Navbar() {
   const [movie, setMovie] = useState<boolean>(false);
   const [tv, setTv] = useState<boolean>(false);
   const [bookmark, setBookmark] = useState<boolean>(false);
-  const [light, setLight] = useState<boolean>(false);
 
   return (
     <nav>

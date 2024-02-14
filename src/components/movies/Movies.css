@@ -1,7 +1,7 @@
-#series {
+#movies {
     background: var(--Dark-Blue, #10141E);
 }
-#series h1 {
+#movies h1 {
     padding: 0 16px;
     padding-top: 24px;
     padding-bottom: 24px;

@@ -6,16 +6,12 @@ import Recommended from "../recommended/Recommended";
 import Search from "../search/Search";
 import Series from "../series/Series";
 import Trending from "../trending/Trending";
+
 function Home() {
   return (
     <>
-      <Navbar />
-      <Search />
       <Trending />
-      {/* <Recommended /> */}
-      {/* <Movies /> */}
-      {/* <Series /> */}
-      <Bookmarks />
+      <Recommended />
     </>
   );
 }

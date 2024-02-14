@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [home, setHome] = useState<boolean>(true);
@@ -14,58 +15,66 @@ function Navbar() {
       </div>
 
       <div className="center-nav">
-        <div
-          onClick={() => {
-            setHome(true);
-            setMovie(false);
-            setTv(false);
-            setBookmark(false);
-          }}
-        >
-          <img
-            src="../../assets/icon-nav-home.svg"
-            className={home ? "light" : "null"}
-          />
-        </div>
-        <div
-          onClick={() => {
-            setMovie(!movie);
-            setHome(false);
-            setTv(false);
-            setBookmark(false);
-          }}
-        >
-          <img
-            src="../../assets/icon-nav-movies.svg"
-            className={movie ? "light" : "null"}
-          />
-        </div>
-        <div
-          onClick={() => {
-            setTv(!tv);
-            setHome(false);
-            setMovie(false);
-            setBookmark(false);
-          }}
-        >
-          <img
-            src="../../assets/icon-nav-tv-series.svg"
-            className={tv ? "light" : "null"}
-          />
-        </div>
-        <div
-          onClick={() => {
-            setTv(false);
-            setHome(false);
-            setMovie(false);
-            setBookmark(!bookmark);
-          }}
-        >
-          <img
-            src="../../assets/icon-nav-bookmark.svg"
-            className={bookmark ? "light" : "null"}
-          />
-        </div>
+        <Link to="/">
+          <div
+            onClick={() => {
+              setHome(true);
+              setMovie(false);
+              setTv(false);
+              setBookmark(false);
+            }}
+          >
+            <img
+              src="../../assets/icon-nav-home.svg"
+              className={home ? "light" : "null"}
+            />
+          </div>
+        </Link>
+        <Link to="/movies">
+          <div
+            onClick={() => {
+              setMovie(!movie);
+              setHome(false);
+              setTv(false);
+              setBookmark(false);
+            }}
+          >
+            <img
+              src="../../assets/icon-nav-movies.svg"
+              className={movie ? "light" : "null"}
+            />
+          </div>
+        </Link>
+        <Link to="series">
+          <div
+            onClick={() => {
+              setTv(!tv);
+              setHome(false);
+              setMovie(false);
+              setBookmark(false);
+            }}
+          >
+            <img
+              src="../../assets/icon-nav-tv-series.svg"
+              className={tv ? "light" : "null"}
+            />
+          </div>
+        </Link>
+        <Link to="bookmarks">
+          <div
+            onClick={() => {
+              setTv(false);
+              setHome(false);
+              setMovie(false);
+              setBookmark(!bookmark);
+            }}
+          >
+            <img
+              src="../../assets/icon-nav-bookmark.svg"
+              className={bookmark ? "light" : "null"}
+            />
+          </div>
+        </Link>
       </div>
       <div>
         <img

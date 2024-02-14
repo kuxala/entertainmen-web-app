@@ -1,0 +1,14 @@
+body{
+    background: var(--Semi-Dark-Blue, #161D2F);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 16px;
+}
+
+.center-nav{
+    display: flex;
+    gap: 30px;
+}

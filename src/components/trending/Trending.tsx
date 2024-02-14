@@ -1,20 +1,11 @@
 import "./Trending.css";
+import TrendingCard from "../card/TrendingCard";
 
 function Trending() {
   return (
     <div id="trending">
       <h1>Trending</h1>
-      <div className="trending-pictures">
-        <div>
-          <img src="../../assets/image-avatar.png" />
-        </div>
-        <div>
-          <img src="../../assets/image-avatar.png" />
-        </div>
-        <div>
-          <img src="../../assets/image-avatar.png" />
-        </div>
-      </div>
+      <TrendingCard />
     </div>
   );
 }

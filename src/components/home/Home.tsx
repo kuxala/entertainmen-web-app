@@ -1,7 +1,16 @@
+import Card from "../card/Card";
+import Navbar from "../navbar/Navbar";
+import Recommended from "../recommended/Recommended";
+import Search from "../search/Search";
+import Trending from "../trending/Trending";
 function Home() {
   return (
     <>
-      <h1>Home</h1>
+      <Navbar />
+      <Search />
+      <Trending />
+      <Recommended />
+      <Card />
     </>
   );
 }

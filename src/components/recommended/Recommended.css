@@ -1,9 +1,10 @@
-#trending{
+#recommended {
     background: var(--Dark-Blue, #10141E);
-    padding: 0 16px;
 }
-#trending h1{
-    padding-bottom: 16px;
+#recommended h1 {
+    padding: 0 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
     color: var(--Pure-White, #FFF);
     font-family: Outfit;
     font-size: 20px;
@@ -12,4 +13,3 @@
     line-height: normal;
     letter-spacing: -0.312px;
 }
-

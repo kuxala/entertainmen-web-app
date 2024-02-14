@@ -1,0 +1,18 @@
+#trending{
+    background: var(--Dark-Blue, #10141E);
+    padding: 0 16px;
+}
+#trending h1{
+    padding-bottom: 16px;
+    color: var(--Pure-White, #FFF);
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.312px;
+}
+
+.trending-pictures{
+    display: flex;
+}

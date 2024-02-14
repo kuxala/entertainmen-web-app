@@ -15,7 +15,7 @@ function DesktopNav() {
           <Link to="/">
             <div
               onClick={() => {
-                setHome(false);
+                setHome(true);
                 setMovie(false);
                 setTv(false);
                 setBookmark(false);
@@ -43,7 +43,7 @@ function DesktopNav() {
           <Link to="/movies">
             <div
               onClick={() => {
-                setMovie(!movie);
+                setMovie(true);
                 setHome(false);
                 setTv(false);
                 setBookmark(false);
@@ -58,7 +58,7 @@ function DesktopNav() {
           <Link to="series">
             <div
               onClick={() => {
-                setTv(!tv);
+                setTv(true);
                 setHome(false);
                 setMovie(false);
                 setBookmark(false);
@@ -76,7 +76,7 @@ function DesktopNav() {
                 setTv(false);
                 setHome(false);
                 setMovie(false);
-                setBookmark(!bookmark);
+                setBookmark(true);
               }}
             >
               <img

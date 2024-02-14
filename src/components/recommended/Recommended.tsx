@@ -14,7 +14,7 @@ function Recommended() {
               category={x.category}
               rating={x.rating}
               title={x.title}
-              url={x.thumbnail.regular.small}
+              url={x.thumbnail.regular.large}
             />
           );
         })}

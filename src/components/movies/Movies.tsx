@@ -7,7 +7,7 @@ function Movies() {
     <>
       <div id="movies">
         <h1>Movies</h1>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }}>
+        <div className="columns">
           {data.map((x) => {
             if (x.category == "Movie") {
               return (

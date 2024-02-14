@@ -13,3 +13,17 @@
     line-height: normal;
     letter-spacing: -0.312px;
 }
+.columns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media only screen and (min-width: 768px){
+    #recommended{
+        padding-left: 150px;
+    }
+    .columns{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

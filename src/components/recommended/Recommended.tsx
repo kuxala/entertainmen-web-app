@@ -6,7 +6,7 @@ function Recommended() {
   return (
     <div id="recommended">
       <h1>Recommended for you</h1>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }}>
+      <div className="columns">
         {data.map((x) => {
           return (
             <Card

@@ -13,3 +13,10 @@
     line-height: normal;
     letter-spacing: -0.312px;
 }
+
+@media only screen and (min-width: 768px){
+    #movies{
+        padding-left: 150px;
+    }
+ 
+}

@@ -29,8 +29,6 @@ const CenterBookmark = styled.div`
 `;
 
 function TrendingCard({ year, category, rating, title, url }: Props) {
-  const [bookmark, setBookmark] = useState(!false);
-
   return (
     <>
       <div className="trending-pictures">

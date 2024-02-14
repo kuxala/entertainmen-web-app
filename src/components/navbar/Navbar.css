@@ -1,7 +1,6 @@
-body{
-    background: var(--Semi-Dark-Blue, #161D2F);
-}
+
 nav{
+    background: var(--Semi-Dark-Blue, #161D2F);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,3 +14,4 @@ nav{
 .light{
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) hue-rotate(0deg);
 }
+

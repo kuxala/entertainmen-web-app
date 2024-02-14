@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -7,13 +7,32 @@ function Navbar() {
   const [movie, setMovie] = useState<boolean>(false);
   const [tv, setTv] = useState<boolean>(false);
   const [bookmark, setBookmark] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav>
-      <div>
-        <img src="../../assets/logo.svg" className="movie-logo" />
-      </div>
-
+      <Link to="/">
+        <div
+          onClick={() => {
+            setHome(false);
+            setMovie(false);
+            setTv(false);
+            setBookmark(false);
+          }}
+        >
+          <img src="../../assets/logo.svg" className="movie-logo" />
+        </div>
+      </Link>
       <div className="center-nav">
         <Link to="/">
           <div

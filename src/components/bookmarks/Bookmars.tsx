@@ -7,7 +7,7 @@ function Bookmarks() {
     <>
       <div id="bookmarksPage">
         <h1>Bookmarked Movies</h1>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }}>
+        <div className="columns">
           {data.map((x) => {
             if (x.isBookmarked) {
               return (

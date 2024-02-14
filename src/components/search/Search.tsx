@@ -15,11 +15,14 @@ const BothComponent = styled.div`
   display: flex;
   padding: 26px 16px;
   background: var(--Dark-Blue, #10141e);
+  @media screen and (min-width: 768px) {
+    padding-left: 150px;
+  }
 `;
 function Search() {
   return (
     <BothComponent>
-      <img src="../../assets/icon-search.svg" />
+      <img src="../../assets/icon-search.svg" width="32px" />
       <Input placeholder="Search for movies or TV series" />
     </BothComponent>
   );

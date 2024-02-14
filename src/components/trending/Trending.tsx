@@ -3,7 +3,8 @@ import TrendingCard from "../card/TrendingCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import data from "../../data.json";
+import { useState } from "react";
 const settings = {
   dots: false,
   arrows: false, // Remove arrow buttons
@@ -32,14 +33,27 @@ const settings = {
     },
   ],
 };
+
 function Trending() {
   return (
     <div id="trending">
       <h1>Trending</h1>
       <Slider {...settings}>
-        <TrendingCard />
-        <TrendingCard />
-        <TrendingCard />
+        {data.map((x) => {
+          if (x.isTrending) {
+            return (
+              <TrendingCard
+                year={x.year}
+                category={x.category}
+                rating={x.rating}
+                title={x.title}
+                url={x.thumbnail.regular.medium}
+              />
+            );
+          } else {
+            return null;
+          }
+        })}
       </Slider>
     </div>
   );

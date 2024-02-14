@@ -10,7 +10,6 @@ function Home() {
       <Search />
       <Trending />
       <Recommended />
-      <Card />
     </>
   );
 }

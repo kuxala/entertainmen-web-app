@@ -12,3 +12,6 @@ nav{
     display: flex;
     gap: 30px;
 }
+.light{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) hue-rotate(0deg);
+}

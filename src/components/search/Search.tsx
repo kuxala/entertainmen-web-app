@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { useForm, SubmitHandler } from "react-hook-form";
-
+import { useState } from "react";
+import data from "../../data.json";
 const Input = styled.input`
   height: 30px;
   width: 100%;
@@ -22,19 +22,13 @@ const BothComponent = styled.form`
 `;
 
 function Search() {
-  const { register, handleSubmit, watch } = useForm<any>();
-
-  const onSubmit = (data: string) => {
-    console.log(data);
-  };
+  const [search, setSearch] = useState();
 
   return (
-    <BothComponent onSubmit={handleSubmit(onSubmit)}>
+    <BothComponent>
       <img src="../../assets/icon-search.svg" width="32px" />
-      <Input
-        placeholder="Search for movies or TV series"
-        {...register("search")}
-      />
+      <Input placeholder="Search for movies or TV series" />
+      <div></div>
     </BothComponent>
   );
 }

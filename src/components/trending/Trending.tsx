@@ -34,7 +34,7 @@ const settings = {
   ],
 };
 
-function Trending() {
+function Trending({ movieData, setMovieData }: any) {
   return (
     <div id="trending">
       <h1>Trending</h1>
@@ -49,6 +49,9 @@ function Trending() {
                 title={x.title}
                 url={x.thumbnail.regular.large}
                 index={1}
+                movieData={movieData}
+                setMovieData={setMovieData}
+                isBookmarked={x.isBookmarked}
               />
             );
           } else {

@@ -7,10 +7,10 @@ import Search from "../search/Search";
 import Series from "../series/Series";
 import Trending from "../trending/Trending";
 
-function Home() {
+function Home({ movieData, setMovieData }: any) {
   return (
     <>
-      <Trending />
+      <Trending movieData={movieData} setMovieData={setMovieData} />
       <Recommended />
     </>
   );

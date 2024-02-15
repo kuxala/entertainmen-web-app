@@ -11,6 +11,9 @@ interface Props {
   title: string;
   url: string;
   index: number;
+  movieData: any;
+  setMovieData: any;
+  isBookmarked: boolean;
 }
 
 const Bookmarks = styled.div`
@@ -35,22 +38,35 @@ const CenterBookmark = styled.div`
   }
 `;
 
-function TrendingCard({ year, category, rating, title, url }: Props) {
+const emptyBookmark = "../../assets/icon-bookmark-empty.svg";
+const fullBookmark = "../../assets/icon-bookmark-full.svg";
+function TrendingCard({
+  year,
+  category,
+  rating,
+  title,
+  url,
+  movieData,
+  setMovieData,
+  isBookmarked,
+}: Props) {
   const [isHovered, setIsHovered] = useState(false);
+  // const [bookmarked, setIsbookmarked] = useState<boolean>(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+  // const handleMouseEnter = () => {
+  //   setIsHovered(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setIsHovered(false);
+  // };
+
   return (
     <>
       <div className="trending-pictures">
         <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          // onMouseEnter={handleMouseEnter}
+          // onMouseLeave={handleMouseLeave}
           id="trending-card"
           style={{
             backgroundImage: `url(${url})`,
@@ -61,14 +77,16 @@ function TrendingCard({ year, category, rating, title, url }: Props) {
             <CenterBookmark>
               <Bookmarks>
                 <img
-                  src="../../assets/icon-bookmark-empty.svg"
+                  src={isBookmarked ? fullBookmark : emptyBookmark}
                   width="16px"
                   onClick={() => {
-                    data.map((x) => {
-                      if (x.isBookmarked) {
-                        return !x.isBookmarked;
-                      }
-                    });
+                    movieData[
+                      movieData.findIndex((item: any) => item.title === title)
+                    ].isBookmarked =
+                      !movieData[
+                        movieData.findIndex((item: any) => item.title === title)
+                      ].isBookmarked;
+                    setMovieData([...movieData]);
                   }}
                 />
               </Bookmarks>

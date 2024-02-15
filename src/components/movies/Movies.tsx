@@ -1,14 +1,13 @@
 import "./Movies.css";
-import data from "../../data.json";
 import Card from "../card/Card";
 
-function Movies() {
+function Movies({ movieData, setMovieData }: any) {
   return (
     <>
       <div id="movies">
         <h1>Movies</h1>
         <div className="columns">
-          {data.map((x) => {
+          {movieData.map((x: any) => {
             if (x.category == "Movie") {
               return (
                 <Card

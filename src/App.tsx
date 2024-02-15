@@ -7,10 +7,11 @@ import Search from "./components/search/Search";
 import Bookmarks from "./components/bookmarks/Bookmars";
 import DesktopNav from "./components/navbar/DesktopNav";
 import { useEffect, useState } from "react";
+import data from "./data.json";
 
 export default function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
+  const [movieData, setMovieData] = useState(data);
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -26,9 +27,14 @@ export default function App() {
       {screenWidth > 768 ? <DesktopNav /> : <Navbar />}
       <Search />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
+        <Route
+          path="/"
+          element={<Home movieData={movieData} setMovieData={setMovieData} />}
+        />
+        <Route
+          path="/movies"
+          element={<Movies movieData={movieData} setMovieData={setMovieData} />}
+        />
         <Route path="/series" element={<Series />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
       </Routes>

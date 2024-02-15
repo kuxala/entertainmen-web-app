@@ -16,3 +16,6 @@
     background: rgb(177, 177, 177); 
     border-radius: 10px;
   }
+body{
+  background: var(--Dark-Blue, #10141E);
+}

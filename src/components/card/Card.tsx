@@ -95,10 +95,10 @@ const CenterBookmark = styled.div`
   position: absolute;
   justify-content: flex-end;
   margin-bottom: 40px;
-  margin-right: 10px;
+  margin-right: 150px;
   @media screen and (min-width: 768px) {
-    margin-bottom: 120px;
-    margin-right: 20px;
+    /* margin-top: 10px; */
+    /* margin-left: 220px; */
   }
 `;
 

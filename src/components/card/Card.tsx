@@ -1,5 +1,4 @@
 import { useState } from "react";
-import data from "../../data.json";
 import "./Card.css";
 import styled from "styled-components";
 
@@ -9,6 +8,9 @@ interface Props {
   rating: any;
   title: string;
   url: string;
+  isBookmarked: any;
+  movieData: any;
+  setMovieData: any;
 }
 
 const Play = styled.div`
@@ -77,18 +79,50 @@ const CardTitle = styled.p`
   font-weight: 400;
   line-height: normal;
 `;
+const Bookmarks = styled.div`
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background-color: #10141e;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+`;
+const CenterBookmark = styled.div`
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+  margin-right: 10px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 120px;
+    margin-right: 20px;
+  }
+`;
 
-function Card({ year, category, rating, title, url }: Props) {
+const emptyBookmark = "../../assets/icon-bookmark-empty.svg";
+const fullBookmark = "../../assets/icon-bookmark-full.svg";
+function Card({
+  year,
+  category,
+  rating,
+  title,
+  url,
+  isBookmarked,
+  movieData,
+  setMovieData,
+}: Props) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
+  console.log("in Card: ", isBookmarked);
   return (
     <CardContainer
       onMouseEnter={handleMouseEnter}
@@ -100,8 +134,25 @@ function Card({ year, category, rating, title, url }: Props) {
           <PlayP>Play</PlayP>
         </Play>
       )}
-
+      <CenterBookmark>
+        <Bookmarks>
+          <img
+            src={isBookmarked ? fullBookmark : emptyBookmark}
+            width="16px"
+            onClick={() => {
+              movieData[
+                movieData.findIndex((item: any) => item.title === title)
+              ].isBookmarked =
+                !movieData[
+                  movieData.findIndex((item: any) => item.title === title)
+                ].isBookmarked;
+              setMovieData([...movieData]);
+            }}
+          />
+        </Bookmarks>
+      </CenterBookmark>
       <CardImage src={url} alt="Card Image" />
+
       <TextContainer>
         <Text>{year}</Text>
         <Text>{category}</Text>

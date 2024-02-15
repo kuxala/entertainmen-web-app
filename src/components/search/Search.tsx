@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
-import data from "../../data.json";
 const Input = styled.input`
   height: 30px;
   width: 100%;
@@ -21,9 +19,7 @@ const BothComponent = styled.div`
   }
 `;
 
-function Search({ focus, setFocus, input, setInput }: any) {
-  const [search, setSearch] = useState();
-
+function Search({ setFocus, setInput }: any) {
   return (
     <BothComponent>
       <img src="../../assets/icon-search.svg" width="32px" />

@@ -39,7 +39,6 @@ function Home({ movieData, setMovieData, focus, input }: any) {
               input == x.title[0] ||
               input == x.title.toLowerCase()[0]
             ) {
-              console.log("Matched");
               return (
                 <ResultCard>
                   <Card
@@ -48,6 +47,9 @@ function Home({ movieData, setMovieData, focus, input }: any) {
                     rating={x.rating}
                     title={x.title}
                     url={x.thumbnail.regular.large}
+                    isBookmarked={x.isBookmarked}
+                    movieData={movieData}
+                    setMovieData={setMovieData}
                   />
                 </ResultCard>
               );

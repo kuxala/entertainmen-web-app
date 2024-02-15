@@ -1,8 +1,5 @@
 import "./TrendingCard.css";
 import styled from "styled-components";
-import data from "../../data.json";
-import { useState } from "react";
-import { json } from "react-router-dom";
 
 interface Props {
   year: number;

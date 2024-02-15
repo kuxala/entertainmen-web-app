@@ -58,7 +58,7 @@ function Trending({ movieData, setMovieData }: any) {
                   index={1}
                   movieData={movieData}
                   setMovieData={setMovieData}
-                  isBookmarked={x.isBookmarked}
+                  isBookmarked={false}
                 />
               </div>
             );

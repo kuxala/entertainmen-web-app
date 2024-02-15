@@ -14,6 +14,9 @@ function Recommended({ movieData }: any) {
               rating={x.rating}
               title={x.title}
               url={x.thumbnail.regular.large}
+              isBookmarked={x.isBookmarked}
+              movieData={undefined}
+              setMovieData={undefined}
             />
           );
         })}

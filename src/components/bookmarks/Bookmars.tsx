@@ -1,14 +1,13 @@
 import "./Bookmarks.css";
-import data from "../../data.json";
 import Card from "../card/Card";
 
-function Bookmarks() {
+function Bookmarks({ movieData }: any) {
   return (
     <>
       <div id="bookmarksPage">
         <h1>Bookmarked Movies</h1>
         <div className="columns">
-          {data.map((x) => {
+          {movieData.map((x: any) => {
             if (x.isBookmarked) {
               return (
                 <Card

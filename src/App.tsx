@@ -12,6 +12,8 @@ import data from "./data.json";
 export default function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [movieData, setMovieData] = useState(data);
+  const [focus, setFocus] = useState<boolean>(false);
+  const [input, setInput] = useState<any>(null);
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -25,18 +27,38 @@ export default function App() {
   return (
     <>
       {screenWidth > 768 ? <DesktopNav /> : <Navbar />}
-      <Search />
+      <Search
+        focus={focus}
+        setFocus={setFocus}
+        input={input}
+        setInput={setInput}
+      />
       <Routes>
         <Route
           path="/"
-          element={<Home movieData={movieData} setMovieData={setMovieData} />}
+          element={
+            <Home
+              movieData={movieData}
+              setMovieData={setMovieData}
+              focus={focus}
+              setFocus={setFocus}
+              input={input}
+              setInput={setInput}
+            />
+          }
         />
+
         <Route
           path="/movies"
           element={<Movies movieData={movieData} setMovieData={setMovieData} />}
         />
-        <Route path="/series" element={<Series />} />
-        <Route path="/bookmarks" element={<Bookmarks />} />
+
+        <Route path="/series" element={<Series movieData={movieData} />} />
+
+        <Route
+          path="/bookmarks"
+          element={<Bookmarks movieData={movieData} />}
+        />
       </Routes>
     </>
   );

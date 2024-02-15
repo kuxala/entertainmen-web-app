@@ -1,17 +1,62 @@
-import Bookmarks from "../bookmarks/Bookmars";
 import Card from "../card/Card";
-import Movies from "../movies/Movies";
-import Navbar from "../navbar/Navbar";
 import Recommended from "../recommended/Recommended";
-import Search from "../search/Search";
-import Series from "../series/Series";
 import Trending from "../trending/Trending";
+import styled from "styled-components";
+const SearchResults = styled.div`
+  margin: 100px 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-function Home({ movieData, setMovieData }: any) {
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 150px;
+    margin-top: 100px;
+  }
+`;
+const ResultCard = styled.div`
+  /* width: 250px;
+  margin: 100px 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 150px;
+    margin-top: 100px;
+    width: 400px;
+  } */
+`;
+function Home({ movieData, setMovieData, focus, input }: any) {
   return (
     <>
       <Trending movieData={movieData} setMovieData={setMovieData} />
-      <Recommended />
+      {focus ? (
+        <SearchResults>
+          {movieData.map((x: any) => {
+            if (
+              input == x.title.toLowerCase() ||
+              input == x.title ||
+              input == x.title[0] ||
+              input == x.title.toLowerCase()[0]
+            ) {
+              console.log("Matched");
+              return (
+                <ResultCard>
+                  <Card
+                    year={x.year}
+                    category={x.category}
+                    rating={x.rating}
+                    title={x.title}
+                    url={x.thumbnail.regular.large}
+                  />
+                </ResultCard>
+              );
+            }
+          })}
+        </SearchResults>
+      ) : (
+        <Recommended movieData={movieData} />
+      )}
     </>
   );
 }

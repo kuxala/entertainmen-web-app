@@ -2,6 +2,9 @@
     background: var(--Dark-Blue, #10141E);
     padding: 0 16px;
 }
+body{
+    overflow-x: hidden;
+}
 #trending h1{
     padding-bottom: 16px;
     color: var(--Pure-White, #FFF);
@@ -16,5 +19,7 @@
 @media only screen and (min-width: 768px){
     #trending{
         padding-left: 150px;
+        width: 200vh;
+
     }
 }

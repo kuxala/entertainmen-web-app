@@ -24,10 +24,7 @@ function Navbar() {
       <Link to="/">
         <div
           onClick={() => {
-            setHome(false);
-            setMovie(false);
-            setTv(false);
-            setBookmark(false);
+            window.location.reload();
           }}
         >
           <img src="../../assets/logo.svg" className="movie-logo" />

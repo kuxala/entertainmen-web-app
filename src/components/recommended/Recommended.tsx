@@ -1,13 +1,12 @@
 import Card from "../card/Card";
 import "./Recommended.css";
-import data from "../../data.json";
 
-function Recommended() {
+function Recommended({ movieData }: any) {
   return (
     <div id="recommended">
       <h1>Recommended for you</h1>
       <div className="columns">
-        {data.map((x) => {
+        {movieData.map((x: any) => {
           return (
             <Card
               year={x.year}

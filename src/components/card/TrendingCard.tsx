@@ -50,8 +50,7 @@ function TrendingCard({
   setMovieData,
   isBookmarked,
 }: Props) {
-  const [isHovered, setIsHovered] = useState(false);
-  // const [bookmarked, setIsbookmarked] = useState<boolean>(false);
+  // const [isHovered, setIsHovered] = useState(false);
 
   // const handleMouseEnter = () => {
   //   setIsHovered(true);

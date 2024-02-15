@@ -12,7 +12,7 @@ const Input = styled.input`
   font-size: 16px;
   border: 0px;
 `;
-const BothComponent = styled.form`
+const BothComponent = styled.div`
   display: flex;
   padding: 26px 16px;
   background: var(--Dark-Blue, #10141e);
@@ -21,14 +21,21 @@ const BothComponent = styled.form`
   }
 `;
 
-function Search() {
+function Search({ focus, setFocus, input, setInput }: any) {
   const [search, setSearch] = useState();
 
   return (
     <BothComponent>
       <img src="../../assets/icon-search.svg" width="32px" />
-      <Input placeholder="Search for movies or TV series" />
-      <div></div>
+      <Input
+        placeholder="Search for movies or TV series"
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+        onFocus={() => {
+          setFocus(true);
+        }}
+      />
     </BothComponent>
   );
 }

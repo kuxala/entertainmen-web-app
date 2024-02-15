@@ -2,12 +2,15 @@ import "./TrendingCard.css";
 import styled from "styled-components";
 import data from "../../data.json";
 import { useState } from "react";
+import { json } from "react-router-dom";
+
 interface Props {
   year: number;
   category: string;
   rating: any;
   title: string;
   url: string;
+  index: number;
 }
 
 const Bookmarks = styled.div`
@@ -33,10 +36,21 @@ const CenterBookmark = styled.div`
 `;
 
 function TrendingCard({ year, category, rating, title, url }: Props) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <>
       <div className="trending-pictures">
         <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           id="trending-card"
           style={{
             backgroundImage: `url(${url})`,
@@ -59,6 +73,7 @@ function TrendingCard({ year, category, rating, title, url }: Props) {
                 />
               </Bookmarks>
             </CenterBookmark>
+
             <div id="texts">
               <p id="year">{year}</p>
               <p id="movie">{category}</p>

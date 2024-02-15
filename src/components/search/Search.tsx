@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 const Input = styled.input`
   height: 30px;
@@ -11,7 +12,7 @@ const Input = styled.input`
   font-size: 16px;
   border: 0px;
 `;
-const BothComponent = styled.div`
+const BothComponent = styled.form`
   display: flex;
   padding: 26px 16px;
   background: var(--Dark-Blue, #10141e);
@@ -19,11 +20,21 @@ const BothComponent = styled.div`
     padding-left: 150px;
   }
 `;
+
 function Search() {
+  const { register, handleSubmit, watch } = useForm<any>();
+
+  const onSubmit = (data: string) => {
+    console.log(data);
+  };
+
   return (
-    <BothComponent>
+    <BothComponent onSubmit={handleSubmit(onSubmit)}>
       <img src="../../assets/icon-search.svg" width="32px" />
-      <Input placeholder="Search for movies or TV series" />
+      <Input
+        placeholder="Search for movies or TV series"
+        {...register("search")}
+      />
     </BothComponent>
   );
 }

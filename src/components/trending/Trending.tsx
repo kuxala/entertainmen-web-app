@@ -47,7 +47,8 @@ function Trending() {
                 category={x.category}
                 rating={x.rating}
                 title={x.title}
-                url={x.thumbnail.regular.medium}
+                url={x.thumbnail.regular.large}
+                index={1}
               />
             );
           } else {

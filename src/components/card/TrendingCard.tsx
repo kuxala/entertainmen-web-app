@@ -26,6 +26,10 @@ const CenterBookmark = styled.div`
   justify-content: flex-end;
   margin-bottom: 40px;
   margin-right: 10px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 120px;
+    margin-right: 20px;
+  }
 `;
 
 function TrendingCard({ year, category, rating, title, url }: Props) {

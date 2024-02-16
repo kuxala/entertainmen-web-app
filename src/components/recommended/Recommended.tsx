@@ -1,7 +1,7 @@
 import Card from "../card/Card";
 import "./Recommended.css";
 
-function Recommended({ movieData }: any) {
+function Recommended({ movieData, setMovieData }: any) {
   return (
     <div id="recommended">
       <h1>Recommended for you</h1>
@@ -15,8 +15,9 @@ function Recommended({ movieData }: any) {
               title={x.title}
               url={x.thumbnail.regular.large}
               isBookmarked={x.isBookmarked}
-              movieData={undefined}
-              setMovieData={undefined}
+              movieData={movieData}
+              setMovieData={setMovieData}
+              key={x.title}
             />
           );
         })}

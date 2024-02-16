@@ -57,7 +57,7 @@ function Home({ movieData, setMovieData, focus, input }: any) {
           })}
         </SearchResults>
       ) : (
-        <Recommended movieData={movieData} />
+        <Recommended movieData={movieData} setMovieData={setMovieData} />
       )}
     </>
   );

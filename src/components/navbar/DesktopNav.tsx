@@ -15,7 +15,10 @@ function DesktopNav() {
           <Link to="/">
             <div
               onClick={() => {
-                window.location.reload();
+                setHome(true);
+                setMovie(false);
+                setTv(false);
+                setBookmark(false);
               }}
             >
               <img src="../../assets/logo.svg" className="movie-logo" />

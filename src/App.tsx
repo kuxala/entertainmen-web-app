@@ -8,12 +8,14 @@ import Bookmarks from "./components/bookmarks/Bookmars";
 import DesktopNav from "./components/navbar/DesktopNav";
 import { useEffect, useState } from "react";
 import data from "./data.json";
-
+import Play from "./components/play/Play";
 export default function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [movieData, setMovieData] = useState(data);
   const [focus, setFocus] = useState<boolean>(false);
   const [input, setInput] = useState<any>(null);
+  // const [clicked, setClicked] = useState<boolean>(false);
+
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -53,12 +55,18 @@ export default function App() {
           element={<Movies movieData={movieData} setMovieData={setMovieData} />}
         />
 
-        <Route path="/series" element={<Series movieData={movieData} />} />
+        <Route
+          path="/series"
+          element={<Series movieData={movieData} setMovieData={setMovieData} />}
+        />
 
         <Route
           path="/bookmarks"
-          element={<Bookmarks movieData={movieData} />}
+          element={
+            <Bookmarks movieData={movieData} setMovieData={setMovieData} />
+          }
         />
+        <Route path="/play" element={<Play />} />
       </Routes>
     </>
   );

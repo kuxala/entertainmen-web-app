@@ -1,6 +1,16 @@
 import "./TrendingCard.css";
 import styled from "styled-components";
+// const [isHovered, setIsHovered] = useState(false);
 
+// const handleMouseEnter = () => {
+//   setIsHovered(true);
+// };
+
+// const handleMouseLeave = () => {
+//   setIsHovered(false);
+// };
+// onMouseEnter={handleMouseEnter}
+// onMouseLeave={handleMouseLeave}
 interface Props {
   year: number;
   category: string;
@@ -47,22 +57,10 @@ function TrendingCard({
   setMovieData,
   isBookmarked,
 }: Props) {
-  // const [isHovered, setIsHovered] = useState(false);
-
-  // const handleMouseEnter = () => {
-  //   setIsHovered(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setIsHovered(false);
-  // };
-
   return (
     <>
       <div className="trending-pictures">
         <div
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
           id="trending-card"
           style={{
             backgroundImage: `url(${url})`,

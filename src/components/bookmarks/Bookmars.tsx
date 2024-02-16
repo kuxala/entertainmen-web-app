@@ -1,7 +1,7 @@
 import "./Bookmarks.css";
 import Card from "../card/Card";
 
-function Bookmarks({ movieData }: any) {
+function Bookmarks({ movieData, setMovieData }: any) {
   return (
     <>
       <div id="bookmarksPage">
@@ -16,6 +16,9 @@ function Bookmarks({ movieData }: any) {
                   rating={x.rating}
                   title={x.title}
                   url={x.thumbnail.regular.large}
+                  isBookmarked={x.isBookmarked}
+                  movieData={movieData}
+                  setMovieData={setMovieData}
                 />
               );
             }

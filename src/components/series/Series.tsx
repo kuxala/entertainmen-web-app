@@ -1,7 +1,7 @@
 import "./Series.css";
 import Card from "../card/Card";
 
-function Series({ movieData }: any) {
+function Series({ movieData, setMovieData }: any) {
   return (
     <>
       <div id="series">
@@ -16,6 +16,9 @@ function Series({ movieData }: any) {
                   rating={x.rating}
                   title={x.title}
                   url={x.thumbnail.regular.large}
+                  isBookmarked={x.isBookmarked}
+                  movieData={movieData}
+                  setMovieData={setMovieData}
                 />
               );
             }

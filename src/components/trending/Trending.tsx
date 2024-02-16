@@ -3,7 +3,6 @@ import TrendingCard from "../card/TrendingCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import data from "../../data.json";
 
 const cardSpacing = {
   display: "inline-block",
@@ -45,10 +44,10 @@ function Trending({ movieData, setMovieData }: any) {
     <div id="trending">
       <h1>Trending</h1>
       <Slider {...settings}>
-        {data.map((x) => {
+        {movieData.map((x: any) => {
           if (x.isTrending) {
             return (
-              <div style={cardSpacing}>
+              <div style={cardSpacing} key={x.title}>
                 <TrendingCard
                   year={x.year}
                   category={x.category}
@@ -58,7 +57,7 @@ function Trending({ movieData, setMovieData }: any) {
                   index={1}
                   movieData={movieData}
                   setMovieData={setMovieData}
-                  isBookmarked={false}
+                  isBookmarked={x.isBookmarked}
                 />
               </div>
             );

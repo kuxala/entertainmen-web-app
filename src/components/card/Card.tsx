@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Card.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 interface Props {
   year: number;
@@ -8,7 +9,7 @@ interface Props {
   rating: any;
   title: string;
   url: string;
-  isBookmarked: any;
+  isBookmarked: boolean;
   movieData: any;
   setMovieData: any;
 }
@@ -49,7 +50,7 @@ const CardContainer = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 70%;
+  /* height: 70%; */
   flex-shrink: 0;
   border-radius: 8px;
 `;
@@ -90,15 +91,17 @@ const Bookmarks = styled.div`
   justify-content: center;
   border-radius: 50%;
 `;
+
 const CenterBookmark = styled.div`
-  display: flex;
   position: absolute;
+  right: 5%;
+  top: 5%;
   justify-content: flex-end;
   margin-bottom: 40px;
-  margin-right: 150px;
+  margin-right: 10px;
   @media screen and (min-width: 768px) {
-    /* margin-top: 10px; */
-    /* margin-left: 220px; */
+    margin-bottom: 120px;
+    margin-right: 20px;
   }
 `;
 
@@ -122,17 +125,18 @@ function Card({
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-  console.log("in Card: ", isBookmarked);
   return (
     <CardContainer
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {isHovered && (
-        <Play>
-          <PlayImg src="../../assets/icon-play.svg" alt="Play Icon" />
-          <PlayP>Play</PlayP>
-        </Play>
+        <Link to="play">
+          <Play>
+            <PlayImg src="../../assets/icon-play.svg" alt="Play Icon" />
+            <PlayP>Play</PlayP>
+          </Play>
+        </Link>
       )}
       <CenterBookmark>
         <Bookmarks>
@@ -151,7 +155,7 @@ function Card({
           />
         </Bookmarks>
       </CenterBookmark>
-      <CardImage src={url} alt="Card Image" />
+      <CardImage src={url} />
 
       <TextContainer>
         <Text>{year}</Text>
